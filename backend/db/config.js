@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const dbConnection = async()=>{
-            mongoose.connect(process.env.BD_CNN_REMOTE, {
+            mongoose.connect(process.env.BD_CNN, {
                 useNewUrlParser:true,
                 useCreateIndex:true,
                 useUnifiedTopology: true

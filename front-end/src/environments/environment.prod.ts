@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: 'http://localhost:4000/app'
+  baseUrl: 'https://pelicula-alquiler.herokuapp.com/app'
 };
