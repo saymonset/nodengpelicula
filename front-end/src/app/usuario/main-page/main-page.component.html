@@ -1,0 +1,22 @@
+
+
+
+
+<h1>Usuarios</h1>
+<hr>
+
+<div class="row">
+    
+    <div class="col">
+        <div class="dropdown-divider"></div>
+
+        <app-usuarios [usuarios]="storedUsuarios"></app-usuarios>
+
+    </div>
+
+    <div class="col">
+        <app-agregar-usuario (usuarioCreated)="onPostAdded($event)"></app-agregar-usuario>
+     </div>
+
+
+</div>

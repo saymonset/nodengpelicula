@@ -1,0 +1,25 @@
+<span class="login100-form-title p-b-49">
+    Lista de Peliculas
+</span>
+
+
+<ul>
+    <li *ngFor="let movie of movies ">
+            <span class="label-input100">{{ movie.title}} - {{movie.description }}</span>
+    </li>
+</ul>
+
+<div class="text-right p-t-8 p-b-31"></div>
+    
+<div class="container-login100-form-btn">
+    <div class="wrap-login100-form-btn">
+        <div class="login100-form-bgbtn"></div>
+        <button (click)="onRegresar()"
+                 class="login100-form-btn"
+                type="button"
+                >
+            Regresar
+        </button>
+    </div>
+</div>
+ 

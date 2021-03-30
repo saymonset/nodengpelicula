@@ -1,0 +1,22 @@
+
+
+
+
+<h1>Peliculas</h1>
+<hr>
+
+<div class="row">
+    
+    <div class="col">
+        <div class="dropdown-divider"></div>
+
+        <app-movies [movies]="storedMovies"></app-movies>
+
+    </div>
+
+    <div class="col">
+        <app-agregar (movieCreated)="onPostAdded($event)"></app-agregar>
+     </div>
+
+
+</div>
