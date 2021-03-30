@@ -20,7 +20,7 @@ Run `ng build ` to build the project. The build artifacts will be stored in the 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 
-# User
+# User App
 
 (User: MDSolutions,
  Email: MDSolutions@gmail.com 
@@ -28,6 +28,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
  # URL acceso
  https://pelicula-alquiler.herokuapp.com/
+
+ # GIT HUB
+ https://github.com/saymonset/nodengpelicula.git
 
 
  

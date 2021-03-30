@@ -20,7 +20,7 @@
  # Use: pelicula
  # Password: 9YnsB5vgFq9j9hoZ
 
-# User
+# User App
 
 (User: MDSolutions,
  Email: MDSolutions@gmail.com 
@@ -28,3 +28,6 @@
 
  # URL acceso
  https://pelicula-alquiler.herokuapp.com/
+
+ # GIT HUB
+ https://github.com/saymonset/nodengpelicula.git
