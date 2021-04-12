@@ -19,5 +19,18 @@ VALUES
 2590);
 
 # Run mysql para struipe backend
-# cd backend_java and run
+# cd backend_java/
+# and run
     mvn spring-boot:run
+
+
+
+    #  Run backend with node
+    cd \backend
+
+
+  # Run frontEnd
+  # cd front-end/
+  # and run
+    ng serve --open
+  
