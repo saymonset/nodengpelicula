@@ -10,10 +10,9 @@ const routes: Routes = [
     path:'',
     component: PrincipalComponent,
     children: [
-      {path: 'inicio', component: PrincipalComponent},
       {path: 'lista', component: ListaArticuloComponent},
       {path: 'detalle/:id', component: DetalleArticuloComponent},
-      {path: '**', redirectTo: 'inicio', pathMatch: 'full'}
+      {path: '**', redirectTo: 'lista', pathMatch: 'full'}
     ]
   }
   
