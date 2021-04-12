@@ -1,0 +1,18 @@
+<form novalidate (ngSubmit)="buy()" autocomplete="off" [formGroup]="stripeForm">
+    <input type="text" formControlName="name" placeholder="Jane Doe">
+   <!-- 
+  -->
+  <input type="number" formControlName="precio">
+  <input type="text" formControlName="descripcion"> 
+  
+  <ngx-stripe-card
+  [options]="cardOptions"
+  [elementsOptions]="elementsOptions"
+></ngx-stripe-card>
+
+    <button type="submit">
+      CREATE TOKEN
+    </button>
+  </form>
+
+  

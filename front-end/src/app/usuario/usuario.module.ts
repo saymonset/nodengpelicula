@@ -6,6 +6,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UsuarioRoutingModule } from './usuario-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +16,8 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
-    UsuarioRoutingModule
+    UsuarioRoutingModule,
+    SharedModule
   ],
   exports:[
     MainPageComponent

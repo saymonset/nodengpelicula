@@ -41,6 +41,12 @@ export class AgregarComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  
+  onRegresar(){
+    this.router.navigateByUrl('/movies');
+ }
+  
   
   register(){
     

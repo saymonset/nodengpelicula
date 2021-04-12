@@ -12,6 +12,8 @@ export class MainPageComponent implements OnInit {
 
 
 
+  termino : string = '';
+  hayError: boolean = false;
   usuario: Usuario = {};
 
   //const { name, email, password} = this.miFormulario.value;

@@ -20,6 +20,8 @@ export class AgregarComponent implements OnInit {
 
   @Output() usuarioCreated = new EventEmitter<Usuario>();
 
+  
+
 
 
 
@@ -43,15 +45,17 @@ export class AgregarComponent implements OnInit {
   }
 
   
+  onRegresar(){
+    this.router.navigateByUrl('/usuario');
+ }
+  
   register(){
-    
     const { name, email, password} = this.miFormulario.value;
      this.usuarioService.registro( name, email, password)
      .subscribe( ok =>{
        if (ok === true){
         this.usuarioCreated.emit(this.miFormulario.value);
         Swal.fire('Sucess', ok,'info')
-         
        }else{
          //Todo Mostrar mensaje de error
          Swal.fire('Error', ok,'error')

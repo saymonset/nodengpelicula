@@ -27,6 +27,14 @@ export class DashboardComponent implements OnInit {
      this.authService.logout();
   }
 
+
+  
+
+  irStripe(){
+    this.router.navigateByUrl('/stripe');
+ }
+
+
   irUsuarios(){
     this.router.navigateByUrl('/usuario');
  }

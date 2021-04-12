@@ -13,6 +13,11 @@ export class MoviesComponent implements OnInit {
 
  
   @Input() movies: IMovie[] = [];
+
+  
+  @Input() editar: boolean = false;
+
+  @Input() eliminar: boolean = false;
  
 
   constructor(private router: Router) { }
@@ -26,5 +31,12 @@ export class MoviesComponent implements OnInit {
   onRegresar(){
      this.router.navigateByUrl('/dashboard');
   }
+
+   
+   
+ onAgregar(){
+   this.router.navigateByUrl('movies/agregar');
+}
+
 
 }
