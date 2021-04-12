@@ -18,19 +18,16 @@ VALUES
 'Mis Loros',
 2590);
 
-# Run mysql para struipe backend
-# cd backend_java/
-# and run
-    mvn spring-boot:run
+	# Run mysql para stripe backend
+	# cd backend_java/
+	    mvn spring-boot:run
 
 
 
-    #  Run backend with node
-    cd \backend
+    #  Run backend with node:    cd \backend
+      npm run dev
 
 
-  # Run frontEnd
-  # cd front-end/
-  # and run
+  # Run frontEnd : cd front-end/
     ng serve --open
   
