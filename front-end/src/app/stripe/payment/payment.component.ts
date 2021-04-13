@@ -14,6 +14,7 @@ import {
 import { PaymentService } from '../services/payment.service';
 import { PaymentIntentDto } from '../model/payment-intent-dto';
 import { ModalComponent } from '../modal/modal.component';
+import { tap } from 'rxjs/operators';
  
 
 @Component({
@@ -23,11 +24,6 @@ import { ModalComponent } from '../modal/modal.component';
 })
 export class PaymentComponent implements OnInit {
 
- 
- 
-/* --------------------- */
-/*   @Input() precio: number = 0;
- */
   @Input() name: string = '';
   @Input() descripcion: string = ''; 
   @Input() precio: number = 0; 
@@ -40,6 +36,9 @@ export class PaymentComponent implements OnInit {
   });
 
   error: any;
+  // UI
+  cargando: boolean = false;
+
  
 
   constructor(
@@ -98,6 +97,19 @@ export class PaymentComponent implements OnInit {
     
     this.stripeService
       .createToken(this.card.element, { name })
+      .pipe(
+        /* Con el pipe me permite Disparar efectos secundarios con
+         el operador tap */
+        /* El tap recibe la region .. Pero como no me interesa... Coloco un _ o
+        cuaquier nombre 
+        ( _ ) Es una nomenclatura standar de que no me interesa
+        */
+        tap( ( _ ) => {
+          /* Aqui seteo las variables que me interesan o sus campos */
+          /* Con el reset ponemos el campo a pristine */
+          this.cargando = true;
+        }) 
+      )
       .subscribe((result) => {
         if (result.token) {
           // Use the token
@@ -108,12 +120,25 @@ export class PaymentComponent implements OnInit {
             currency: 'EUR',
             description: this.descripcion
           };
-          this.paymentService.pagar(paymentIntentDto).subscribe(
+          this.paymentService.pagar(paymentIntentDto)
+          .pipe(
+            /* Con el pipe me permite Disparar efectos secundarios con
+             el operador tap */
+            /* El tap recibe la region .. Pero como no me interesa... Coloco un _ o
+            cuaquier nombre 
+            ( _ ) Es una nomenclatura standar de que no me interesa
+            */
+            tap( ( _ ) => {
+              /* Aqui seteo las variables que me interesan o sus campos */
+              /* Con el reset ponemos el campo a pristine */
+              this.cargando = true;
+            }) 
+          )
+          .subscribe(
             ({id, description, amount } ) => {
-               
-          
               this.abrirModal(id , this.name, description, amount );
-            //  this.router.navigate(['/']);
+              this.router.navigate(['/stripe/lista']);
+              this.cargando = false;
             }
           );
           this.error = undefined;

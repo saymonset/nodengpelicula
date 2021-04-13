@@ -30,7 +30,6 @@ export class DetalleArticuloComponent implements OnInit {
     const id = this.activatedRoute.snapshot.params.id;
     this.articuloService.detalle(id).subscribe(
       data => {
-        console.log({data})
          this.articulo = data;
       },
       err => {

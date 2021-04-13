@@ -1,18 +1,25 @@
-<form novalidate (ngSubmit)="buy()" autocomplete="off" [formGroup]="stripeForm">
+<div class="row" *ngIf="cargando">
+  <div class="col">
+      <div class="alert alert-primary">
+          Cargando...
+      </div>
+  </div>
+</div>
+<form novalidate (ngSubmit)="buy()" autocomplete="off" [formGroup]="stripeForm"
+      *ngIf="!cargando">
     <input type="text" formControlName="name" placeholder="Jane Doe">
-   <!-- 
-  -->
-  <input type="number" formControlName="precio">
-  <input type="text" formControlName="descripcion"> 
+    <input type="number" formControlName="precio">
+    <input type="text" formControlName="descripcion"> 
   
   <ngx-stripe-card
-  [options]="cardOptions"
-  [elementsOptions]="elementsOptions"
+      [options]="cardOptions"
+      [elementsOptions]="elementsOptions"
 ></ngx-stripe-card>
 
     <button type="submit">
       CREATE TOKEN
     </button>
   </form>
+
 
   
